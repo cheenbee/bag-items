@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.env
+.env.ai
+data
+*.log
+*.xlsx
+*.xls
+output
+.codex-temp
+.playwright-cli
+.import-work

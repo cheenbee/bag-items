@@ -1,0 +1,46 @@
+{
+  "name": "bpms",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "node server/app.js",
+    "dev:client": "vite --host 0.0.0.0",
+    "start": "node server/app.js",
+    "build": "node scripts/build.mjs",
+    "check": "node --check server/config.js && node --check server/app.js && node --check server/database.js && node --check server/auth-service.js && node --check server/storage-service.js && node --check server/bom-service.js && node --check server/packing-service.js && node --check server/ai-quote-service.js && node --check server/agent-service.js",
+    "migrate:postgres": "node scripts/migrate-sqlite-to-postgres.mjs",
+    "migrate:images": "node scripts/migrate-images-to-s3.mjs",
+    "test:security": "node scripts/security-smoke.mjs",
+    "test:load": "node scripts/load-test.mjs",
+    "test:agent": "node scripts/agent-smoke.mjs"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1106.0",
+    "@aws-sdk/s3-request-presigner": "^3.1106.0",
+    "@e965/xlsx": "^0.20.3",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.6.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mammoth": "^1.12.1",
+    "pdf-parse": "^2.4.5",
+    "pdfjs-dist": "^5.4.296",
+    "pg": "^8.23.0",
+    "qrcode": "^1.5.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sharp": "^0.35.3",
+    "xlsx": "^0.18.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.2",
+    "concurrently": "^9.2.1",
+    "vite": "^7.1.3"
+  }
+}

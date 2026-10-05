@@ -1,0 +1,315 @@
+/* 手机自适应布局：重新组织信息，不对桌面页面做整体缩放。 */
+.app-bottom-nav { display: none; }
+.mobile-page-back { display: none; }
+
+.app-module-hub { max-width: 1120px; margin: 0 auto; }
+.app-hub-intro { margin-bottom: 28px; }
+.app-hub-intro p { margin: 0 0 8px; color: #718c82; font: 600 10px "DM Mono"; letter-spacing: 1.6px; }
+.app-hub-intro h1 { margin: 0; }
+.app-hub-intro span { display: block; margin-top: 8px; color: #6e8179; }
+.app-module-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.app-module-grid > button { display: grid; grid-template-columns: 44px minmax(0, 1fr) 20px; align-items: center; gap: 12px; min-height: 92px; padding: 17px; border: 1px solid #dce7d8; border-radius: 15px; background: #fbfdf9; color: #173b35; text-align: left; }
+.app-module-grid > button > i { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 13px; background: #e8f0e4; color: #285d50; font-style: normal; font-weight: 850; }
+.app-module-grid > button > span { display: grid; gap: 4px; min-width: 0; }
+.app-module-grid > button b { font-size: 15px; }
+.app-module-grid > button small { overflow: hidden; color: #789087; font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.app-module-grid > button strong { color: #9a7440; font-size: 23px; font-weight: 400; }
+
+@media (max-width: 700px) {
+  html, body, #root { width: 100%; max-width: 100%; overflow-x: clip; }
+  html, body { scrollbar-width: none; }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; }
+  body { font-size: 14px; }
+  .app { min-height: 100dvh; padding-top: calc(56px + env(safe-area-inset-top)); padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .mobile-topbar {
+    height: calc(56px + env(safe-area-inset-top));
+    grid-template-columns: 30px 1fr auto;
+    padding: calc(8px + env(safe-area-inset-top)) 14px 8px;
+  }
+  .mobile-topbar img { width: 30px; height: 30px; }
+  .mobile-topbar span { font-size: 15px; }
+
+  .app > main {
+    width: 100%;
+    padding: 16px 12px 24px;
+    overflow: visible;
+  }
+  .app > main > * { max-width: 100%; }
+  .mobile-page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 38px !important;
+    margin: -5px 0 9px;
+    padding: 3px 8px 3px 2px;
+    color: #5f7b70;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .mobile-page-back i { color: #a7792c; font-size: 25px; font-style: normal; font-weight: 400; line-height: 1; }
+  header {
+    min-height: 50px;
+    margin-bottom: 14px;
+    padding: 0 2px 12px;
+    align-items: center;
+    flex-flow: row wrap;
+  }
+  header > div:first-child { min-width: 0; flex: 1; }
+  header p { display: none; }
+  h1 { font-size: 25px; letter-spacing: -.8px; }
+  h2 { font-size: 18px; }
+  header .maintenance-actions { width: auto; }
+
+  .app-bottom-nav {
+    position: fixed;
+    z-index: 11;
+    inset: auto 0 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: calc(66px + env(safe-area-inset-bottom));
+    padding: 6px 7px env(safe-area-inset-bottom);
+    border-top: 1px solid #d5e2d1;
+    background: color-mix(in srgb, #fbfdf9 94%, transparent);
+    box-shadow: 0 -9px 28px #193d3214;
+    backdrop-filter: blur(16px);
+  }
+  .app-bottom-nav button {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 3px;
+    min-width: 0;
+    min-height: 54px !important;
+    padding: 3px;
+    border-radius: 12px;
+    color: #789087;
+  }
+  .app-bottom-nav button i {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    font-style: normal;
+    font-size: 13px;
+    font-weight: 850;
+  }
+  .app-bottom-nav button span { font-size: 10px; font-weight: 750; }
+  .app-bottom-nav button.active { background: #edf3e9; color: #17473e; }
+  .app-bottom-nav button.active i { background: #17473e; color: #f5c66c; }
+  .app:has(.modal-shade) > .app-bottom-nav { display: none; }
+  .modal-shade { z-index: 30; }
+
+  .app-module-hub { margin: -2px 0 0; }
+  .app-hub-intro { margin: 0 2px 18px; }
+  .app-hub-intro p { font-size: 9px; }
+  .app-hub-intro h1 { font-size: 27px; letter-spacing: -.9px; }
+  .app-hub-intro span { max-width: 30em; margin-top: 6px; font-size: 12px; line-height: 1.55; }
+  .app-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .app-module-grid > button {
+    grid-template-columns: 38px minmax(0, 1fr) 12px;
+    gap: 8px;
+    min-height: 82px;
+    padding: 11px 9px;
+    border-radius: 13px;
+  }
+  .app-module-grid > button > i { width: 38px; height: 38px; border-radius: 11px; font-size: 12px; }
+  .app-module-grid > button b { font-size: 13px; }
+  .app-module-grid > button small { font-size: 9px; }
+  .app-module-grid > button strong { font-size: 18px; }
+
+  .panel {
+    padding: 14px;
+    overflow: visible;
+    border-radius: 13px;
+    box-shadow: 0 6px 18px #2343310d;
+  }
+  .section-title {
+    width: 100%;
+    min-width: 0 !important;
+    gap: 10px;
+    margin-bottom: 11px;
+    padding-bottom: 10px;
+  }
+  .section-title p { display: none; }
+  .section-title h2 { font-size: 17px; }
+
+  /* 首页：保留两列，但不使用过小字号。 */
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin-bottom: 11px;
+  }
+  .dashboard-stat {
+    min-height: 118px;
+    padding: 14px;
+    border-radius: 13px;
+  }
+  .dashboard-stat > span { top: 11px; right: 11px; font-size: 10px; }
+  .dashboard-stat > strong { margin: 1px 0 3px; font-size: 31px; }
+  .dashboard-stat > b { font-size: 13px; line-height: 1.35; }
+  .dashboard-stat > small {
+    margin-top: 4px;
+    overflow: hidden;
+    font-size: 10.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dashboard-stat > i { display: none; }
+
+  .dashboard-quick-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    margin-bottom: 12px;
+    padding: 9px;
+    border-radius: 13px;
+  }
+  .dashboard-quick-strip > div { grid-column: 1 / -1; padding: 3px 5px; }
+  .dashboard-quick-strip > div p { display: none; }
+  .dashboard-quick-strip > div b { font-size: 13px; }
+  .dashboard-quick-strip > button {
+    grid-template-columns: 31px minmax(0, 1fr) 14px;
+    min-height: 52px;
+    gap: 7px;
+    padding: 7px;
+    border: 1px solid #ffffff16;
+    border-radius: 9px;
+  }
+  .dashboard-quick-strip > button > i { width: 31px; height: 31px; }
+  .dashboard-quick-strip > button span b { font-size: 11.5px; }
+  .dashboard-quick-strip > button span small { display: none; }
+  .dashboard-grid,
+  .dashboard-main-column,
+  .dashboard-side-column { gap: 11px; }
+  .dashboard-orders { overflow: visible; }
+
+  /* 搜索和筛选始终占满手机宽度。 */
+  .toolbar,
+  .history-filters {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 11px;
+  }
+  .search,
+  .history-filters select { width: 100%; min-width: 0; }
+
+  .toolbar > select { width: 100%; }
+
+  /* 所有业务表格在手机上转为字段卡片，不再左右滑动。 */
+  .mobile-card-table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border-collapse: separate;
+  }
+  .panel,
+  .modal,
+  .site-sidebar,
+  .quotation-preview-stage,
+  .agent-conversation,
+  .process-master-list { scrollbar-width: none; }
+  .panel::-webkit-scrollbar,
+  .modal::-webkit-scrollbar,
+  .site-sidebar::-webkit-scrollbar,
+  .quotation-preview-stage::-webkit-scrollbar,
+  .agent-conversation::-webkit-scrollbar,
+  .process-master-list::-webkit-scrollbar { width: 0; height: 0; }
+
+  .modal table.mobile-card-table { min-width: 0 !important; }
+  .mobile-card-table thead { display: none; }
+  .mobile-card-table tbody {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+  }
+  .mobile-card-table tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #dbe7d6;
+    border-radius: 12px;
+    background: #fbfdf9;
+    box-shadow: 0 4px 14px #2343310a;
+  }
+  .mobile-card-table tbody td {
+    display: block;
+    min-width: 0;
+    padding: 10px 11px;
+    border: 0;
+    border-bottom: 1px solid #e5ede2;
+    color: #294940;
+    overflow-wrap: anywhere;
+  }
+  .mobile-card-table tbody td:nth-child(odd) { border-right: 1px solid #e5ede2; }
+  .mobile-card-table tbody td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 5px;
+    color: #789087;
+    font: 500 9px "DM Mono";
+    letter-spacing: .5px;
+  }
+  .mobile-card-table tbody td:first-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+    background: #f1f6ee;
+  }
+  .mobile-card-table tbody td.actions,
+  .mobile-card-table tbody td:last-child {
+    grid-column: 1 / -1;
+    border-right: 0;
+  }
+  .mobile-card-table tbody td.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding-block: 8px;
+  }
+  .mobile-card-table tbody td.actions::before { margin: 0 auto 0 0; }
+  .mobile-card-table tbody td.actions button { min-width: 68px; }
+  .mobile-card-table td small { font-size: 10px; line-height: 1.45; }
+  .mobile-card-table .data-thumb,
+  .mobile-card-table .data-thumb-fallback { width: 44px; height: 44px; }
+
+  /* BOM：输入单列，结果按材料卡片展示。 */
+  .calculator { display: block; }
+  .calculator .controls { display: block; padding: 15px; }
+  .controls > p { display: none; }
+  .controls h2 { margin-bottom: 13px; font-size: 18px; }
+  .controls label { margin: 10px 0; font-size: 12px; }
+  .calculator .legend { display: none; }
+  .calculator .result { min-height: 210px; margin-top: 11px; }
+  .color-quantity-input { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; }
+  .delivery-group { margin-top: 14px; }
+  .delivery-group table.mobile-card-table { min-width: 0 !important; }
+  .delivery-group h3 { margin-bottom: 8px; font-size: 14px; }
+  .delivery-group .mobile-card-table tbody tr { background: #f8fbf6; }
+  .delivery-group tr.rule-selected,
+  .delivery-group tr.rule-muted { transform: none; }
+
+  /* 编辑页使用自然单列和底部保存区。 */
+  .form-grid,
+  .product-form .product-form-three,
+  .product-color-image-row,
+  .detail-cards,
+  .two-columns { grid-template-columns: 1fr !important; }
+  .form-grid { gap: 11px; }
+  .form-section { margin: 12px 0; padding: 13px; }
+  .form-section h3 { margin-bottom: 11px; }
+  .accessory-row,
+  .quote-accessory-row { grid-template-columns: 1fr 1fr; }
+  .accessory-row > *:first-child,
+  .accessory-row > *:last-child { grid-column: 1 / -1; }
+
+  button,
+  input:not([type="checkbox"]):not([type="radio"]),
+  select { min-height: 44px !important; }
+}
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  .app-module-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

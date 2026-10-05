@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Zhiyuan brand mark</title>
+  <desc id="desc">A handbag outline connected to three BOM nodes</desc>
+  <rect width="64" height="64" rx="14" fill="#16332B"/>
+  <path d="M19 25.5h26l3.5 24H15.5l3.5-24Z" fill="none" stroke="#FBF3DE" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M25 26v-3.5a7 7 0 0 1 14 0V26" fill="none" stroke="#E9C46A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="24" cy="38" r="2.7" fill="#E9C46A"/>
+  <circle cx="40" cy="38" r="2.7" fill="#E9C46A"/>
+  <circle cx="32" cy="46" r="2.7" fill="#E9C46A"/>
+  <path d="M26.7 38h10.6M25.9 40l4.3 4.2M38.1 40l-4.3 4.2" fill="none" stroke="#E9C46A" stroke-width="1.8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,58 @@
+:root{
+  --sidebar-bg:#fbf3de;
+  --sidebar-border:#ead9ae;
+  --sidebar-brand:#7a5a1e;
+  --sidebar-group:#b08e4f;
+  --sidebar-text:#8a6e3a;
+  --sidebar-active-bg:#16332b;
+  --sidebar-active-text:#eff5e8;
+}
+
+aside{width:250px;padding:26px 18px 20px;background:var(--sidebar-bg);color:var(--sidebar-text);border-right:1px solid var(--sidebar-border)}
+.brand{gap:12px;padding:0 8px 28px;border-bottom:1px solid var(--sidebar-border)}
+.brand>img{display:block;width:42px;height:42px;flex:0 0 42px;border-radius:11px;box-shadow:0 5px 14px rgba(122,90,30,.14)}
+.brand b{color:var(--sidebar-brand);font-size:14px;font-weight:700;letter-spacing:.04em}
+.brand small{max-width:145px;margin-top:4px;color:#a08043;font-size:9.5px;line-height:1.35;letter-spacing:.02em}
+
+nav{gap:0;padding-top:18px}
+.nav-group{gap:0;margin:0;padding:0 0 17px;border:0}
+.nav-group-title{display:block;padding:0 9px 7px;color:var(--sidebar-group);font-size:9.5px;font-weight:600;letter-spacing:.1em;line-height:1.4;text-transform:uppercase}
+.nav-subitems{gap:2px;padding:0}
+.nav-subitems button{position:relative;min-height:38px;padding:9px 11px;border-radius:6px;color:var(--sidebar-text);font-size:11.5px;font-weight:500;line-height:1.35;transition:background .15s ease,color .15s ease,transform .15s ease}
+.nav-subitems button i{width:5px;height:5px;flex:0 0 5px;border-radius:50%;background:currentColor;color:inherit;opacity:.52}
+.nav-subitems button:hover{background:rgba(22,51,43,.08);color:#604817;transform:translateX(1px)}
+.nav-subitems button.active{background:var(--sidebar-active-bg);color:var(--sidebar-active-text);font-weight:700;box-shadow:0 5px 13px rgba(22,51,43,.14)}
+.nav-subitems button.active i{color:inherit;background:#d8b65c;opacity:1}
+.sidebar-bottom{display:grid;gap:3px;margin-top:auto;padding:15px 8px 0;border-top:1px solid var(--sidebar-border);color:var(--sidebar-group)}
+.sidebar-bottom span{font:600 8.5px "DM Mono";letter-spacing:.14em}
+.sidebar-bottom small{color:#ad925d;font-size:9px}
+
+@media(max-width:700px){
+  aside{width:100%;padding:18px 16px 20px;border-right:1px solid var(--sidebar-border);border-bottom:0}
+  .brand{padding:0 2px 18px;border-bottom:1px solid var(--sidebar-border)}
+  .brand>img{width:36px;height:36px;flex-basis:36px;border-radius:9px}
+  nav{display:grid;padding-top:17px}
+  nav .nav-group{display:grid;min-width:0;padding:0 0 18px;border:0}
+  .nav-group-title{display:block;padding:0 10px 6px}
+  .nav-subitems{display:grid;gap:2px;padding:0}
+  .nav-subitems button{width:100%;min-height:44px;padding:10px 11px;white-space:normal;text-align:left}
+  .nav-subitems button:hover{transform:none}
+  .sidebar-bottom{display:grid}
+}
+
+/* 概览快捷入口：暖金浅底，替代原深绿色横条 */
+.dashboard-quick-strip{
+  background:#f8edcf;
+  border-color:#e2c984;
+  box-shadow:0 8px 22px rgba(122,90,30,.10);
+  color:#4f3b17;
+}
+.dashboard-quick-strip>div p{color:#a47d31}
+.dashboard-quick-strip>div b{color:#4f3b17}
+.dashboard-quick-strip>button{border-left-color:#ddc47f;color:#4f3b17}
+.dashboard-quick-strip>button:hover{background:rgba(22,51,43,.07)}
+.dashboard-quick-strip>button>i{background:#e9a331;color:#16332b;box-shadow:0 3px 8px rgba(148,96,15,.16)}
+.dashboard-quick-strip>button span b{color:#4f3b17}
+.dashboard-quick-strip>button span small{color:#8a7040}
+.dashboard-quick-strip>button>strong{color:#a86f12}
+@media(max-width:700px){.dashboard-quick-strip>button{border-top-color:#ddc47f}}

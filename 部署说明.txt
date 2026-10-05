@@ -1,0 +1,45 @@
+箱包行业产品数字化管理系统 V1.0 - 完整迁移包
+================================================
+
+本压缩包已包含：
+1. 前后端完整源码与固定版本依赖清单
+2. 当前 SQLite 业务数据库快照
+3. 当前上传图片及附件
+4. Docker、Nginx、MinIO 部署配置
+5. 当前 AI 服务配置（.env.ai，含密钥，请妥善保管）
+
+目标电脑要求：
+- Windows 10/11 64 位
+- 安装 Docker Desktop，并启动 Docker Desktop
+- 首次部署需要联网下载基础镜像及 Node 依赖
+- 建议至少 4GB 可用内存、5GB 可用磁盘
+
+部署步骤：
+1. 解压整个 ZIP 到普通英文或中文目录。
+2. 启动 Docker Desktop，等待状态显示 Running。
+3. 双击“启动系统.bat”。首次构建通常需要几分钟。
+4. 浏览器打开 http://localhost:8080
+5. 同一局域网内其他设备可打开 http://目标电脑IP:8080
+
+管理员登录：
+- 用户名：admin
+- 初始密码：blcwT1RHyCErf3dyFqpjbZcDXT3ueBRJ
+
+首次登录后请立即在系统中修改管理员密码。
+
+常用操作：
+- 启动/升级：双击“启动系统.bat”
+- 停止：双击“停止系统.bat”
+- 查看状态：在本目录打开 PowerShell，执行 docker compose ps
+- 查看日志：在本目录打开 PowerShell，执行 docker compose logs -f
+
+数据说明：
+- 原有数据库：data/bpms.db
+- 原有本地上传文件：data/uploads
+- 新上传图片：保存在 Docker 的 object_data 数据卷中
+- 不要仅复制源码目录；迁移或备份时应保留整个解压目录及 Docker 数据卷。
+
+安全提醒：
+- 本包含真实业务数据、上传文件、管理员初始密码及 AI API 密钥，请勿公开传播。
+- 当前配置适合本机或可信局域网部署。若开放公网，必须另行配置域名、HTTPS、防火墙和正式备份策略。
+- 如果 8080 端口被占用，可修改 .env 中 WEB_PORT，例如改成 8088，然后用 http://localhost:8088 访问；同时把 CORS_ORIGINS 改为对应地址。

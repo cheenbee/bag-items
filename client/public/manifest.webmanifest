@@ -1,0 +1,13 @@
+{
+  "name": "知源手袋 BOM 配货管理系统",
+  "short_name": "知源 BPMS",
+  "description": "箱包产品档案、原料、BOM 配货与成本管理",
+  "start_url": "/#/dashboard",
+  "display": "standalone",
+  "background_color": "#eef3ec",
+  "theme_color": "#153b36",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "/zhiyuan-mark.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
